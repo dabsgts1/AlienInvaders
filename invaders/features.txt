@@ -1,0 +1,84 @@
+Diya Bansal (db688)
+November 19, 2021
+
+
+
+Additional Features for Assignment 7: Alien Invaders
+
+
+
+1. Multiple Waves:
+
+What: If the player completes a wave without losing all the ship lives, it is time for a new wave 		of aliens. The player's lives does not reset to 3 though.
+
+Each wave's speed increases the alien speed. The alien speed is what makes the game difficult, and the game should get more difficult with each wave. 
+
+NOTE: There are only 3 waves that are created. If the player defeats the third wave, then the player has won the game and an appropriate message is displayed along with the player's total cumulative score.
+
+How: When a wave of aliens is finished, the controller checks this and checks which wave_number that was. If there have been less than 3 waves so far, a new wave is created. Otherwise, the player has won the game.
+
+
+
+2. Sound Effects:
+
+What: The following sounds are played when the corresponding actions happen:
+    pew1.wav when laser bolts are fired by aliens and the ship
+    pop2.wav when alien is destroyed
+    blast1.wav when ship is destroyed
+
+How: The appropriate sound is simply played when an alien/ship is destroyed or a bolt is fired.
+
+
+
+3. Pause Gameplay with 'P'
+
+What: When the user presses the key 'p' in the middle of the game, the screen pauses and asks the user to press 's' to unpause and continue the game.
+
+How: A similar mechanism of the welcome screen (Press 'S' to Start) is used. The only difference is that while the player has paused the game, all the elements on the screen (ship, aliens, bolts, score, lives, defense line) can still be seen but they are frozen in place.
+
+
+
+4. Move the Ship Up and Down
+
+What: In addition to moving the ship left and right, the user can move the ship up and down using the 'up' and 'down' keys.
+
+How: In addition to checking the 'left' and 'right' key presses, the 'up' and 'down' key press is also checked.
+
+
+5. Fast Mode: Boosting the Ship's Speed
+
+What: If the player uses the normal ship controls while also having the 'shift' key pressed, the speed of the ship doubles.
+
+How: In addition to checking the 'left', 'right', 'up', and 'down' key presses, the 'shift' key press is also checked. If it is pressed, the speed of the ship's movement is doubled.
+
+
+
+6. Fast Mode: Boosting the Laser Bolts' Speed
+
+What: If the player uses the normal bolt launcher (which is the 'spacebar') while having the 'shift' key pressed, the speed of all bolts (player and alien bolts) double. The only difference here is that for the bolts to be in this fast mode, the user needs to have both the 'shift' and the 'spacebar' keys pressed down. If either key is released, the bolts revert to normal mode.
+
+How: How: In addition to checking the 'space' key press, the 'shift' key press is also checked. If it is pressed, the speed of the bolt is doubled.
+
+
+
+7. Display Lives
+
+What: In the upper right corner, there is a counter called Lives which displays the number of lives the user has left.
+
+How: There are attributes keeping track of the lives left in wave.py and there is a GLabel in app.py that contains this information.
+
+
+
+8. Player Score
+
+What: The player's score is shown in the top left corner. This score carries over from wave to wave.
+
+How: There are attributes keeping track of score the player has totaled in the wave thus far (in wave.py) and in the previous waves thus far (in app.py). The total score at any given point is simply a sum of these two.
+
+
+
+9. Display final score when game over
+
+What: When the game is over, the final message displayed is "GAME OVER Your Score:" followed by the player's total cumulative score if the player has lost. If the player has won, it displays 'Congratulations! You Won! Your Score:" followed by the player's total cumulative score.
+
+How: This is done calculating the total score as explained in feature 8 above and drawing the GLabel object that contains this information along with the appropriate message.
